@@ -8,6 +8,7 @@ Personal Linux automation and maintenance toolkit written in Bash.
 - System cleanup
 - Network restart
 - System information
+- Swap memory reset
 
 ## Usage
 
@@ -16,3 +17,4 @@ Personal Linux automation and maintenance toolkit written in Bash.
 ./toolkit.sh clean
 ./toolkit.sh network-restart
 ./toolkit.sh info
+./toolkit.sh swap-reset
