@@ -2,29 +2,79 @@
 
 set -euo pipefail
 
-case "${1:-}" in
-update)
-	./scripts/update.sh
-	;;
-clean)
-	./scripts/clean.sh
-	;;
-network-restart)
-	./scripts/restart_network.sh
-	;;
-info)
-	./scripts/system_info.sh
-	;;
-swap-reset)
-	./scripts/reset_swap.sh
-	;;
-*)
-	echo "Usage:"
-	echo "  ./toolkit.sh update"
-	echo "  ./toolkit.sh clean"
-	echo "  ./toolkit.sh network-restart"
-	echo "  ./toolkit.sh info"
-	echo "  ./toolkit.sh swap-reset"
-	exit 1
-	;;
-esac
+show_banner() {
+	clear
+
+	echo "╔══════════════════════════════════════════════════════╗"
+	echo "║              Linux Automation Toolkit                ║"
+	echo "║      System Administration & Security Utilities      ║"
+	echo "╚══════════════════════════════════════════════════════╝"
+	echo
+
+	echo "Hostname : $(hostname)"
+	echo "User     : $(whoami)"
+	echo "Kernel   : $(uname -r)"
+	echo "Date     : $(date '+%Y-%m-%d %H:%M:%S')"
+
+	echo
+	echo "--------------------------------------------------------"
+	echo
+}
+
+show_menu() {
+	echo " System Administration"
+	echo
+	echo "  1) Update system packages"
+	echo "  2) Clean system cache"
+	echo "  3) Restart network services"
+	echo "  4) System information"
+	echo "  5) Reset swap memory"
+	echo
+	echo "  0) Exit"
+	echo
+}
+
+pause() {
+	echo
+	read -rp "Press ENTER to return to the main menu..."
+}
+
+while true; do
+	show_banner
+	show_menu
+
+	read -rp "Select an option: " option
+
+	case "$option" in
+	1)
+		./scripts/update.sh
+		pause
+		;;
+	2)
+		./scripts/clean.sh
+		pause
+		;;
+	3)
+		./scripts/restart_network.sh
+		pause
+		;;
+	4)
+		./scripts/system_info.sh
+		pause
+		;;
+	5)
+		./scripts/reset_swap.sh
+		pause
+		;;
+	0)
+		echo
+		echo "Goodbye!"
+		exit 0
+		;;
+	*)
+		echo
+		echo "Invalid option."
+		sleep 1
+		;;
+	esac
+done
