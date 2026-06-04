@@ -52,50 +52,51 @@ while true; do
 	echo
 
 	case "$option" in
-		1)
-			./scripts/update.sh
-			pause
-			;;
-		2)
-			./scripts/clean.sh
-			pause
-			;;
-		3)
-			./scripts/restart_network.sh
-			pause
-			;;
-		4)
-			./scripts/system_info.sh
-			pause
-			;;
-		5)
-			./scripts/reset_swap.sh
-			pause
-			;;
-		6)
-			./scripts/users.sh
-			pause
-			;;
-		7)
-			./scripts/ports.sh
-			pause
-			;;
-		8)
-			./scripts/disk.sh
-			pause
-			;;
-		9)
-			./scripts/memory.sh
-			pause
-			;;
-		0)
-			echo
-			echo "Goodbye!"
-			exit 0
-			;;
-		*)
-			echo "Invalid option."
-			sleep 1
-			;;
+	1)
+		./scripts/update.sh
+		pause
+		;;
+	2)
+		./scripts/clean.sh
+		pause
+		;;
+	3)
+		./scripts/restart_network.sh
+		pause
+		;;
+	4)
+		./scripts/system_info.sh
+		pause
+		;;
+	5)
+		./scripts/reset_swap.sh
+		pause
+		;;
+	6)
+		./scripts/users.sh
+		pause
+		;;
+	7)
+		./scripts/ports.sh
+		pause
+		;;
+	8)
+		./scripts/disk.sh
+		pause
+		;;
+	9)
+		./scripts/memory.sh
+		pause
+		;;
+	0)
+		echo
+		echo "Goodbye!"
+		exit 0
+		;;
+	*)
+		echo
+		echo "Invalid option."
+		sleep 1
+		;;
 	esac
 done
