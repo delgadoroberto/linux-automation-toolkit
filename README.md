@@ -1,52 +1,45 @@
 # 🐧 Linux Automation Toolkit
 
-A lightweight collection of Bash scripts designed to automate common Linux administration, maintenance, and basic security tasks.
+An interactive Bash-based toolkit for Linux administration, system monitoring, and basic security auditing.
 
-This project was created as a personal learning initiative to improve Bash scripting skills while building practical utilities commonly used by Linux administrators, DevOps engineers, and cybersecurity professionals.
+This project was built as a personal learning initiative to strengthen Linux and Bash scripting skills while creating practical utilities commonly used by system administrators and cybersecurity professionals.
 
 ---
 
 ## ✨ Features
 
-### 🖥️ System
+### 🖥️ System Administration
 
-- Package update
-- System cleanup
-- System information
-- Swap memory reset
+- Update system packages
+- Clean package cache and temporary files
+- Restart network services
+- Display system information
+- Reset swap memory
 
-### 🌐 Network
-
-- Network service restart
-
-### 🔐 Security *(planned)*
+### 📊 Monitoring
 
 - Logged-in users
-- Open ports inspection
-- Failed login detection
-- SUID binary enumeration
-- Firewall status check
-
-### 📊 Monitoring *(planned)*
-
+- Listening ports
 - Disk usage
 - Memory usage
-- Running services
-- Top CPU-consuming processes
 
-### 💾 Backup *(planned)*
+### 🔐 Security *(Roadmap)*
 
+- Failed login detection
+- SUID binary enumeration
+- Firewall status
+- Running services inspection
+
+### 🛠️ Utilities *(Roadmap)*
+
+- SHA256 file hashing
+- Random password generator
 - Configuration backup
-- Directory backup
-
-### 📄 Reporting *(planned)*
-
-- Basic Linux health check
-- Security audit report generation
+- Linux health check report
 
 ---
 
-## 🚀 Current Usage
+## 🚀 Usage
 
 Make the script executable:
 
@@ -54,27 +47,40 @@ Make the script executable:
 chmod +x toolkit.sh
 ```
 
-Run one of the available commands:
+Run the toolkit:
 
 ```bash
-./toolkit.sh update
-./toolkit.sh clean
-./toolkit.sh network-restart
-./toolkit.sh info
-./toolkit.sh swap-reset
+./toolkit.sh
 ```
+
+The toolkit provides an interactive menu that allows users to execute administrative and security-related tasks without remembering command-line arguments.
 
 ---
 
-## 📋 Available Commands
+## 📋 Current Menu
 
-| Command | Description |
-|----------|-------------|
-| update | Update operating system packages |
-| clean | Clean package cache and temporary files |
-| network-restart | Restart network services |
-| info | Display basic system information |
-| swap-reset | Clear and re-enable swap memory |
+```text
+==========================================================
+              LINUX AUTOMATION TOOLKIT
+==========================================================
+
+ System Administration
+
+  1) Update system packages
+  2) Clean system cache
+  3) Restart network services
+  4) System information
+  5) Reset swap memory
+
+ Monitoring
+
+  6) Logged-in users
+  7) Listening ports
+  8) Disk usage
+  9) Memory usage
+
+  0) Exit
+```
 
 ---
 
@@ -82,23 +88,22 @@ Run one of the available commands:
 
 ### Version 1.1
 
-- [ ] Open ports inspection
-- [ ] Logged-in users
-- [ ] Disk usage information
-- [ ] Memory usage information
+- [x] Interactive menu
+- [x] System administration functions
+- [x] Basic monitoring functions
 
 ### Version 1.2
 
 - [ ] Failed login detection
 - [ ] SUID binary enumeration
-- [ ] Firewall status check
-- [ ] Running services report
+- [ ] Firewall status
+- [ ] Running services inspection
 
 ### Version 1.3
 
-- [ ] Configuration backup
-- [ ] SHA256 file hashing
+- [ ] SHA256 hashing
 - [ ] Password generator
+- [ ] Configuration backup
 - [ ] Linux health check report
 
 ---
@@ -108,23 +113,13 @@ Run one of the available commands:
 ```text
 linux-automation-toolkit/
 ├── toolkit.sh
-├── LICENSE
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-## 🛠️ Requirements
-
-- Linux distribution
-- Bash 4.x or later
-- sudo privileges for administrative tasks
-
----
-
 ## 🎯 Learning Objectives
-
-This repository serves as a hands-on environment for practicing:
 
 - Bash scripting
 - Linux system administration
